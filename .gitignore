@@ -1,4 +1,5 @@
-./build
-build/*
-.sconsign.dblite
-wavedschaper.sublime*
+build/
+lib/
+*.sconsign*
+*.sublime*
+core.*

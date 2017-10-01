@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include <pulse/simple.h>
 #include <pulse/error.h>
@@ -29,7 +30,7 @@ int main(int argc, char **argv)
 
         for(int i = 0; i < BUFSIZE; i++)
         {
-            buf[i] = i % 255;
+            buf[i] = rand() % 255;
         }
         if(pa_simple_write(s, buf, BUFSIZE, &error) < 0)
         {
