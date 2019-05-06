@@ -11,7 +11,7 @@
 			"file": "src/main.cpp",
 			"settings":
 			{
-				"buffer_size": 199,
+				"buffer_size": 998,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -423,6 +423,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"...",
 			".",
 			"ss",
 			".",
@@ -549,8 +550,7 @@
 			"]",
 			"colors[",
 			"{colors",
-			"colors",
-			"first"
+			"colors"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -577,15 +577,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 199,
+						"buffer_size": 998,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								98,
-								98
+								701,
+								701
 							]
 						],
 						"settings":
@@ -593,7 +593,7 @@
 							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 219.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -623,7 +623,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 225.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
