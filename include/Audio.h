@@ -4,7 +4,7 @@
 #include <pulse/simple.h>
 
 
-#define AUDIOBUFFERSIZE (1024 * 2)
+#define AUDIOBUFFERSIZE (1024)
 
 class AudioReader
 {

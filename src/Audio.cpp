@@ -11,15 +11,18 @@ AudioReader::AudioReader(int samplerate, int channels, const char *appname, cons
     this->soundspec.format = this->format;
     this->soundspec.rate = samplerate;
     this->soundspec.channels = channels;
+    printf("format: %d\r\n", this->format);
+    printf("rate: %d\r\n", samplerate);
+    printf("channels: %d\r\n", channels);
 
-    this->s = pa_simple_new(NULL,
-                           appname,
-                           PA_STREAM_RECORD,
-                           NULL,
-                           description,
-                           &(this->soundspec),
-                           NULL,
-                           NULL,
+    this->s = pa_simple_new(NULL, // server
+                           appname, // name
+                           PA_STREAM_RECORD, // direction 
+                           NULL, // device
+                           description, // stream name
+                           &(this->soundspec), // sound spec
+                           NULL, // channel mapping
+                           NULL, // buffer attribute
                            &(this->error));
     if(!s)
     {
@@ -63,7 +66,7 @@ AudioWriter::AudioWriter(int samplerate, int channels, const char *appname, cons
 
 void AudioWriter::Write(void *buffer)
 {
-    if(pa_simple_write(this->s, buffer, AUDIOBUFFERSIZE, &(this->error)) < 0)
+    if(pa_simple_write(this->s, buffer, AUDIOBUFFERSIZE * 2 * this->soundspec.channels, &(this->error)) < 0)
     {
         fprintf(stderr, __FILE__": pa_simple_write() failed: %s\n", pa_strerror(this->error));
         exit(1);
